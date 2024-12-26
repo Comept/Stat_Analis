@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class InformationTheory:
     def __init__(self, matrix):
         self.matrix = np.array(matrix)
@@ -33,15 +34,16 @@ class InformationTheory:
     def process(self):
         joint_probs = self.compute_joint_probabilities()
         p_x, p_y = self.marginal_probabilities(joint_probs)
-        
+
         h_y = self.calculate_entropy(p_y)
         cond_h = self.conditional_entropy(joint_probs, p_y)
         info = self.mutual_information(p_x, p_y, cond_h)
-        
+
         h_xy_sum = h_y + cond_h
-        
+
         print(f"Информация:          {info:.3f}")
         print(f"Совместная энтропия: {h_xy_sum:.3f}")
+
 
 test_matrix = [[20, 15, 10, 5],
                [30, 20, 15, 10],
@@ -49,5 +51,9 @@ test_matrix = [[20, 15, 10, 5],
                [20, 20, 25, 20],
                [15, 15, 30, 25]]
 
-info_theory = InformationTheory(test_matrix)
-info_theory.process()
+
+def main(test_matrix):
+    info_theory = InformationTheory(test_matrix)
+    info_theory.process()
+
+main(test_matrix)

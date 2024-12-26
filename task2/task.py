@@ -56,7 +56,7 @@ def calculate_relationships(adjacency: Dict[str, GraphNode]) -> None:
             data.relationships[2] += child_node.relationships[2] + len(child_node.offspring)
             child_node.relationships[3] += data.relationships[3]
 
-def execute(input_data: str) -> None:
+def main(input_data: str) -> None:
     graph_structure = convert_json_to_dict(input_data)
     adjacency_representation = {}
     analyze_graph(graph_structure, adjacency_representation)
@@ -65,4 +65,4 @@ def execute(input_data: str) -> None:
     for vertex, node in sorted_representation.items():
         print(f"{vertex}: {node.relationships}")
 
-execute(INPUT_JSON)
+main(INPUT_JSON)

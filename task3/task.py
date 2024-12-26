@@ -69,7 +69,7 @@ def process_relations(adjacency: Dict[str, GraphNode]) -> None:
             node.relations[2] += child_node.relations[2] + len(child_node.children)
             child_node.relations[3] += node.relations[3]
 
-def execute(input_data: str) -> None:
+def main(input_data: str) -> None:
     graph_data = parse_json_to_dict(input_data)
     adjacency_representation = {}
     build_graph_structure(graph_data, adjacency_representation)
@@ -79,4 +79,4 @@ def execute(input_data: str) -> None:
         print(f"{vertex}: {node.relations}")
     print(compute_entropy([node.relations for node in sorted_representation.values()]))
 
-execute(INPUT_JSON)
+main(INPUT_JSON)

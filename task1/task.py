@@ -33,7 +33,7 @@ def build_adjacency_data(
             offspring = list(subtree.keys())
         adjacency[vertex] = [offspring, ancestor]
 
-def execute_processing(json_input: str) -> None:
+def main(json_input: str) -> None:
     graph_data = parse_json_to_dict(json_input)
     adjacency_repr = {}
     build_adjacency_data(graph_data, adjacency_repr)
@@ -41,4 +41,4 @@ def execute_processing(json_input: str) -> None:
     print(ordered_result)
 
 
-execute_processing(INPUT_JSON)
+main(INPUT_JSON)

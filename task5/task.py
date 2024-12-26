@@ -18,7 +18,9 @@ def calc_uhon(X, Y):
 data1 = [1, [2, 3], 4, [5, 6, 7], 8, 9, 10]
 data2 = [[1, 2], [3, 4, 5], 6, 7, 9, [8, 10]]
 
-matrix1 = calc_matrix(data1)
-matrix2 = calc_matrix(data2)
+def main (data1, data2):
+    matrix1 = calc_matrix(data1)
+    matrix2 = calc_matrix(data2)
 
-calc_uhon(matrix1, matrix2)
+    calc_uhon(matrix1, matrix2)
+main(data1,data2)
